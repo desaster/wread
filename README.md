@@ -13,21 +13,21 @@ The CLI accepts a few single character commands:
 
 | Cmd | Parameters | Description |
 | --- | --- | --- |
-| `q` | | quits the program |
-| `a` | `c<value> h<value> s<value>` | assigns cyl/head/sector values for next read|
-| `r` | | reads a raw sector into memory using the previously assigned c/h/s |
-| `d` | | dumps entire sector of 512 bytes to screen in hex |
-| `l` | | dumps single lines (16 bytes) of sector to screen, use multiple times |
+| `q` | | Quits the program |
+| `a` | `c<value> h<value> s<value>` | assigns cyl/head/sector values for next read |
+| `r` | | Reads a raw sector into memory using the previously assigned C/H/S. Displays status, 00 = Success |
+| `d` | | Dumps entire sector of 512 bytes to screen in hex |
+| `l` | | Dumps single lines (16 bytes) of sector to screen, use multiple times |
 
 Example session:
 
 ```
-C:0 H:0 S:1 > a c h2 s3
-C:0 H:2 S:3 > r
+C:0 H:0 S:1 > a c1 h2 s3
+C:1 H:2 S:3 > r
 S 00
-C:0 H:2 S:3 > l
-= 00 00 00 00 00 00 00 00 00 00 00 00 00 03 20 00
-C:0 H:2 S:3 >
+C:1 H:2 S:3 > l
+= 65 65 6E 20 63 61 75 73 65 64 20 62 79 20 74 68
+C:1 H:2 S:3 > q
 ```
 
 ## Building
